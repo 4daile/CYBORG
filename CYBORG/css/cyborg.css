@@ -1,0 +1,302 @@
+/**--->FONTS<---**/
+@font-face {
+    font-family: "Karrik";
+    src: url(../src/fonts/Karrik-Regular.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Amiamie";
+    src: url(../src/fonts/Amiamie-Regular.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Amiamie";
+    src: url(../src/fonts/Amiamie-Italic.ttf);
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Amiamie";
+    src: url(../src/fonts/Amiamie-Light.ttf);
+    font-style: normal;
+    font-weight: lighter;
+}
+@font-face {
+    font-family: "Amiamie";
+    src: url(../src/fonts/Amiamie-LightItalic.ttf);
+    font-style: italic;
+    font-weight: lighter;
+}
+@font-face {
+    font-family: "le-murmure";
+    src: url(../src/fonts/le-murmure.otf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/**--->GENERAL<---**/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 110px;
+    background-color: #3A6D8C;
+}
+
+body {
+    font-family: "Amiamie";
+    width: 100%;
+    padding: 75px 400px 25px 25px;
+    /**/
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 25px 10px 25px ;
+    /**/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /**/
+    background-color: #3A6D8C;
+    /**/
+    z-index: 1;
+}
+
+header h1 {
+    font-family: "le-murmure";
+    font-size: 60pt;
+    color: #89A8B2;
+}
+
+/**--->SOMMAIRE<---**/
+header #sommaire {
+    /*top: 80px;
+    right: 25px;*/
+    width: 360px;
+    padding-top: 17px;
+
+    /**/
+    font-size: 14pt;
+    list-style-type: none;
+   
+    display: flex;
+    gap: 0 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start
+    /*pour flouter du texte*/
+    /*filter: blur(10px);
+    transition: filter 400ms;*/
+}
+    /*pour les transitions du flou
+    #sommaire:hover{
+    filter: blur(0);
+    transition: filter 400ms;
+    }
+    */
+
+#sommaire li {
+    margin: 0.1em;
+}
+#sommaire a {
+    color: #89A8B2;
+    text-decoration: none;
+}
+#sommaire a:hover {
+    color: #86D293;
+    text-decoration: underline;
+}
+
+
+
+/** BIBLIOGRAPHIE / SITOGRAPHIE **/
+#biblio {
+    list-style-type: none;
+    margin-left: 25px;
+    margin-right: 60px;
+}
+
+/**--->TEXTE<---**/
+h3 {
+    margin-top: 30px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+    font-family: "karrik" ;
+    font-size: 18pt;
+    color:#86D293;
+}
+
+main {
+    width: 100%;
+    max-width: 950px;
+}
+
+main p {
+    font-size: 13pt;
+    padding-top: 20px;
+}
+
+.def {
+    font-size: 13pt;
+    color: #86D293;
+    /**/
+    cursor: pointer;
+}
+
+.lien {
+    color: #86D293;
+}
+
+.lien:hover {
+    text-decoration: underline;
+}
+
+em {
+    font-size: 13pt;
+}
+
+blockquote{
+    padding: 0 20px;
+}
+
+q{
+    color:black;
+}
+/*modifier les quotes*/
+q::before{
+    content: "« ";
+    color: black;
+}
+
+q::after{
+    content: " »";
+    color: black;
+}
+
+
+/**--->REFS / GLOSSAIRE<--- calc(100vh - 400px)**/
+#refs{
+    position: fixed;
+    top: 22%;
+    right: 3px;
+    padding-right: 25px;
+    width: 380px;
+    height: calc(100vh - 180px);
+}
+#refs figure{
+    display: block;
+    width: 100%;
+}
+#refs img {
+    display: block;
+    width: 80%;
+    /**/
+    object-fit: contain;
+    object-position: center top;
+}
+#refs figcaption{
+    padding-top: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+#refs blockquote{
+    display: block;
+    width: 100%;
+    padding: 0;
+    object-fit: contain;
+    object-position: center top;
+}
+
+#refs figure.hidden,
+#refs blockquote.hidden,
+#refs p.hidden {
+    display: none;
+}
+/* LIENS */
+a {
+    text-decoration: none;
+    color:#86D293;
+}
+
+/* === Responsive Design === */
+@media (max-width: 1100px) {
+    body {
+        padding: 75px 25px 25px 25px;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 10px 10px 10px;
+    }
+    header h1 {
+        font-size: 36pt;
+    }
+    header #sommaire {
+        width: 100%;
+        font-size: 12pt;
+        padding-top: 10px;
+        gap: 5px;
+    }
+    main {
+        max-width: 100%;
+    }
+    #refs {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin-top: 30px;
+    }
+    #refs img {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 60px 5vw 20px 5vw;
+    }
+    header {
+        padding: 8px 5vw 8px 5vw;
+    }
+    header h1 {
+        font-size: 22pt;
+    }
+    main p, .def, em {
+        font-size: 11pt;
+    }
+    h3 {
+        font-size: 14pt;
+    }
+    #refs {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+    #refs img {
+        width: 100%;
+        max-width: 100%;
+    }
+    #biblio {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
